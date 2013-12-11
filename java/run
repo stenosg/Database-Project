@@ -1,0 +1,20 @@
+#
+# This script file can be used to launch the r4u User Interface
+# Remember to grant the appropriate privilages to this file
+# i.e. $chmod +x run
+#
+# Export javahome with the latest java compiler in the server 
+JAVAHOME=$JAVAHOME:/usr/csshare/pkgs/jdk1.6.0_02/bin/
+export JAVAHOME
+#
+# Export classpath with the postgressql driver
+CLASSPATH=$CLASSPATH:$PWD/pg73jdbc3.jar
+export CLASSPATH
+#
+# Compile r4u source file
+javac Travel4u.java
+#
+# run the java program
+# change parameters to be the actual values
+java Travel4u <database> <port> <username> <pass>
+

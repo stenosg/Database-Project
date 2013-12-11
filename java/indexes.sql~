@@ -1,0 +1,2 @@
+CREATE INDEX EINDEX
+ON Employee (employeeid);

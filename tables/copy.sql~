@@ -1,0 +1,172 @@
+
+
+--
+-- Load Table          : address
+-- Hasdata: true
+--
+COPY address (
+    street,
+    city,
+    state,
+    zip)
+FROM '../dohertyr/data/address.dat'
+WITH DELIMITER  ',';
+
+COPY language (
+    description)
+FROM '../dohertyr/data/language.dat'
+WITH DELIMITER  ',';
+
+COPY trip_status (
+    description)
+FROM '../dohertyr/data/trip_status.dat'
+WITH DELIMITER  ',';
+
+COPY trip_type (
+    description)
+FROM '../dohertyr/data/trip_type.dat'
+WITH DELIMITER  ',';
+
+COPY destination (
+    description,
+    travel_method)
+FROM '../dohertyr/data/destination.dat'
+WITH DELIMITER  ',';
+
+--
+-- Load Table     : salary_rate
+-- Hasdata: true
+--
+COPY salary_rate (
+    description,
+    hourly_rate,
+    commission_rate)
+FROM '../dohertyr/data/salary_rate.dat'
+WITH DELIMITER ',';
+
+--
+-- Load Table	: employee
+-- Hasdata: true
+--
+COPY employee (
+    password,
+    first_name,
+    last_name,
+    ssn,
+    email,
+    phone,
+    user_name,
+    addressid,
+    salary_rateid)
+FROM '../dohertyr/data/employee.dat'
+WITH DELIMITER ',';
+
+--
+-- Table			: broker
+-- Hasdata: true
+--
+COPY broker(
+	employeeid,
+	specialty)
+FROM '../dohertyr/data/broker.dat'
+WITH DELIMITER ',';
+
+--
+-- Table			: agent
+-- Hasdata: true
+--
+COPY agent(
+	employeeid,
+	comment)
+FROM '../dohertyr/data/agent.dat'
+WITH DELIMITER ',';
+
+--
+-- Table			: manager
+-- Hasdata: true
+--
+COPY manager(
+	employeeid,
+	comment)
+FROM '../dohertyr/data/manager.dat'
+WITH DELIMITER ',';
+
+--
+-- Table              : 		attendance
+-- Hasdata: true
+--
+COPY attendance (
+    check_in,
+    check_out,
+    employeeid)
+FROM '../dohertyr/data/attendance.dat'
+WITH DELIMITER ',';
+
+--
+-- Table              : 	payroll_log
+-- Hasdata: true
+--
+COPY payroll_log (
+    date,
+    amount,
+    employeeid)
+FROM '../dohertyr/data/payroll_log.dat'
+WITH DELIMITER ',';
+
+--
+-- Load Table          : customer
+-- Hasdata: true
+--
+COPY customer (
+    password,
+    first_name,
+    last_name,
+    email,
+    phone,
+    addressid,
+    user_name)
+FROM '../dohertyr/data/customer.dat'
+WITH DELIMITER ',';
+
+COPY speaks (
+    employeeid,
+    languageid)
+FROM '../dohertyr/data/speaks.dat'
+WITH DELIMITER  ',';
+
+COPY travel_order (
+    creation_date,
+    group_size,
+    price,
+    comission,
+    trip_date_start,
+    trip_date_end,
+    agentid,
+    customerid,
+    trip_statusid)
+FROM '../dohertyr/data/travel_order.dat'
+WITH DELIMITER  ',';
+
+COPY trip_package (
+    name,
+    description,
+    price,
+    trip_length,
+    availability,
+    brokerid,
+    supervisorid,
+    typeid)
+FROM '../dohertyr/data/trip_package.dat'
+WITH DELIMITER  ',';
+
+COPY trip_destination (
+    trip_packageid,
+    destinationid)
+FROM '../dohertyr/data/trip_destination.dat'
+WITH DELIMITER  ',';
+
+COPY order_packages (
+    packageid,
+    orderid)
+FROM '../dohertyr/data/order_packages.dat'
+WITH DELIMITER  ',';
